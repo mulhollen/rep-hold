@@ -1,0 +1,35 @@
+{
+   "containerDefinitions": [
+     {
+       "logConfiguration": {
+         "logDriver": "awslogs",
+         "options": {
+           "awslogs-group": "/ecs/picasso",
+           "awslogs-region": "us-east-1",
+           "awslogs-stream-prefix": "ecs"
+         }
+       },
+       "portMappings": [
+         {
+           "hostPort": 3000,
+           "protocol": "tcp",
+           "containerPort": 3000
+         }
+       ],
+       "cpu": 0,
+       "environment": [],
+       "mountPoints": [],
+       "volumesFrom": [],
+       "image": "197334481017.dkr.ecr.us-east-1.amazonaws.com/picasso",
+       "name": "picasso"
+     }
+   ],
+   "cpu": "512",
+   "executionRoleArn": "arn:aws:iam::197334481017:role/ecsTaskExecutionRole",
+   "family": "picasso",
+   "memory": "1024",
+   "networkMode": "awsvpc",
+   "requiresCompatibilities": [
+       "FARGATE"
+    ]
+}
